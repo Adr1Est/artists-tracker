@@ -1,0 +1,13 @@
+.similarArtistsComponent{
+  width: 100%;
+  min-width: 350px;
+}
+
+.artist-card{
+  width: 170px;
+}
+
+.artistCardInfo{
+  font-size: 0.8rem;
+  margin: 5px 0 0 0;
+}

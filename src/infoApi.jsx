@@ -30,5 +30,5 @@ export const fetchDeezerArtist = (name) => {
 
   return fetch(url)
     .then((res) => res.json())
-    .then((data) => data.data[0]);
+    .then((data) => data.data); // He cambiado esto para que me de similares también
 };
