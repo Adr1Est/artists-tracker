@@ -1,41 +1,32 @@
 import './ArtistPage.css'
-import { getArtist } from '../../funciones-api/funciones-api'
 import { useEffect, useState } from 'react'
 import SimilarArtists from './SimilarArtists'
 import FullScreenLoader from '../FullScreenLoader/FullScreenLoader.jsx'
+import TrackList from './TrackList.jsx'
+import { fetchDeezerArtist } from '../infoApi.jsx'
+import ArtistHeader from './ArtistHeader.jsx'
 
 function ArtistPage(){
-  const [artistsData, setArtistsData] = useState({})
+  const [artistsData, setArtistsData] = useState([])
 
   useEffect(()=>{
-    const getBandFromAPI = async () => {
-      const groupsData = await getArtist()
-      setArtistsData(groupsData)
+    const getArtistFromAPI = async () => {
+      const dataFromAPI = await fetchDeezerArtist("linkin+park")
+      setArtistsData(dataFromAPI)
     }
-    getBandFromAPI()
+    getArtistFromAPI()
   }, [])
 
-  useEffect(()=>{
-    console.log(artistsData);
-  }, [artistsData])
-
-  if (!artistsData.data || artistsData.data.length === 0) {
+  if (!artistsData || artistsData.length === 0) {
     return ( <FullScreenLoader /> )
   }
 
   return(
     <>
-      <div className='d-flex flex-column w-100'>
-        <div className='d-flex flex-row align-items-center'>
-          <img 
-            src={artistsData["data"][0]["picture_medium"]} 
-            id="artist-img" 
-            alt={`${artistsData["data"][0]["name"]} logo`}
-           />
-          <h1>{artistsData["data"][0]["name"]}</h1>
-        </div>
-
-        <SimilarArtists /> 
+      <div className='d-flex flex-column justify-content-center w-50'>
+        <ArtistHeader artistsdata={artistsData}/>
+        <TrackList artistsdata={artistsData}/> 
+        <SimilarArtists artistsdata={artistsData} /> 
       </div>
     </>
   )

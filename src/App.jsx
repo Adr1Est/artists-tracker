@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       {/* <CardList listTitle={"Top Artist"}/> */}
-      <div className='d-flex justify-content-center align-items-center container-fluid min-vh-100'>
+      <div className='d-flex justify-content-center align-items-center container-fluid'>
         <ArtistPage /> 
       </div>
     </>
