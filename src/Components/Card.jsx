@@ -1,10 +1,10 @@
 import { strategyWithAudio, strategyWithDateAndFollow } from "../strategies";
 
-const Card = ({renderVariable, date, audioSrc, tags}) =>{
+const Card = ({renderVariable,name,image, listeners, audioSrc, tags}) =>{
     return(<>
-        <img/>
-        <h3>Name</h3>
-        {renderVariable({ date,tags, audioSrc})}
+        <img src={image}/>
+        <h3>{name}</h3>
+        {renderVariable({listeners,tags, audioSrc})}
     </>)
 }
 

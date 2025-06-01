@@ -1,7 +1,7 @@
-export const strategyWithDateAndFollow = ({ date, tags }) => (
+export const strategyWithDateAndFollow = ({ listeners, tags }) => (
   <>
     <p>{tags}</p>
-    <p>{date}</p>
+    <p>{listeners}</p>
     <button>Follow</button>
   </>
 );
