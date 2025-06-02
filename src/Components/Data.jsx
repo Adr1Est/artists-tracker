@@ -1,4 +1,4 @@
-import {getTopArtists, fetchDeezerArtist, getTopArtistsByGenre } from "../infoApi";
+import {getTopArtists, fetchDeezerArtist, getTopArtistsByGenre, fetchLastFmArtist } from "../infoApi";
 
 export const getArtistData = async(name) =>{
     const data = await fetchLastFmArtist(name);
@@ -12,10 +12,15 @@ export const getTopArtistData = async() =>{
     const data = await getTopArtists();
     const dataWithImages = await Promise.all(
         data.map(async (artist) => {
-        const deezerArtist = await fetchDeezerArtist(artist.name);
+        const deezerResult = await fetchDeezerArtist(artist.name);
+        const deezerArtist = deezerResult?.[0];
+        const lastFmData = await fetchLastFmArtist(artist.name);
+        let summary = lastFmData?.artist?.bio?.summary || "";
+        summary = summary.replace(/<a[^>]*>.*?<\/a>/gi, "").trim();
         return {
             ...artist,
             deezerImage: deezerArtist?.picture_big || deezerArtist?.picture_medium || "",
+            summary,
         };
         })
     );
@@ -26,10 +31,15 @@ export const getTopTagData=async(tag)=>{
 const data = await getTopArtistsByGenre(tag);
     const dataWithImages = await Promise.all(
         data.map(async (artist) => {
-        const deezerArtist = await fetchDeezerArtist(artist.name);
+        const deezerResult = await fetchDeezerArtist(artist.name);
+        const deezerArtist = deezerResult?.[0];
+        const lastFmData = await fetchLastFmArtist(artist.name);
+        let summary = lastFmData?.artist?.bio?.summary || "";
+        summary = summary.replace(/<a[^>]*>.*?<\/a>/gi, "").trim();
         return {
             ...artist,
             deezerImage: deezerArtist?.picture_big || deezerArtist?.picture_medium || "",
+            summary,
         };
         })
     );
