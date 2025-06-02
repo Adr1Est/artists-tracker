@@ -1,0 +1,46 @@
+.bg-widget{
+    background-color: #3f3e4c;
+    color: #a29cad;
+}
+.bg-card{
+    background-color: #696978;
+}
+
+.card{
+    width: 340px;
+    flex: 0 0 auto;
+}
+
+.follow-button{
+    background-color: #a29cad;
+    color: #3f3e4c;
+    height: 30px;
+    width: 100px;
+    border: solid 2px #3f3e4c;
+    font-weight: bold;
+    transition: 100ms;
+}
+
+.follow-button:hover{
+    transform: scale(1.1);
+}
+
+.white-text{
+    color: #a29cad !important;
+    font-weight: bold;
+}
+
+.scroll-container::-webkit-scrollbar {
+  height: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: #a29cad;
+  border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #ebd7ea;
+  border-radius: 10px;
+  border: 1px solid #cdb8ce;
+}
