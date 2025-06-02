@@ -23,7 +23,7 @@ function TrackList ({artistsdata}) {
   return(
     <div className='d-flex flex-column mt-3 mb-1 trackListComponent'>
       <h2>Canciones</h2>
-      <div className='d-flex flex-column align-items-center border border-dark border-3 rounded p-1 h-100 overflow-y-auto lista-canciones'>
+      <div className='d-flex flex-column align-items-center rounded-3 p-1 h-100 overflow-y-auto lista-canciones'>
         
           {
             (!trackList || trackList.length === 0) ? ( 

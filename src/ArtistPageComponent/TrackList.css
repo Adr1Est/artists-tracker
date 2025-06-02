@@ -4,6 +4,25 @@
   min-width: 350px;
 }
 
+.lista-canciones{
+  background-color: #696978;
+}
+
+.lista-canciones::-webkit-scrollbar {
+  height: 10px;
+}
+
+.lista-canciones::-webkit-scrollbar-track {
+  background: #a29cad;
+  border-radius: 10px;
+}
+
+.lista-canciones::-webkit-scrollbar-thumb {
+  background-color: #ebd7ea;
+  border-radius: 10px;
+  border: 1px solid #cdb8ce;
+}
+
 .trackInfo{
   margin: 0;
 }

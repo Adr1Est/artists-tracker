@@ -1,3 +1,7 @@
+.artist-page-main{
+  min-width: 400px;
+}
+
 #artist-img{
   width: 250px;
   height: 250px;

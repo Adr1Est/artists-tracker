@@ -25,11 +25,13 @@ function ArtistPage(){
 
   return(
     <>
-      <div className='d-flex flex-column justify-content-center w-50'>
+    <div className='w-100 d-flex justify-content-center'>
+      <div className='d-flex flex-column justify-content-center w-50 bg-widget rounded-3 p-3 artist-page-main'>
         <ArtistHeader artistsdata={artistsData} singleArtist={name}/>
         <TrackList artistsdata={artistsData}/> 
         <SimilarArtists artistsdata={artistsData}/> 
       </div>
+    </div>
     </>
   )
 }

@@ -5,9 +5,30 @@
 
 .artist-card{
   width: 170px;
+  background-color: #EBD7EA;
 }
 
 .artistCardInfo{
   font-size: 0.8rem;
   margin: 5px 0 0 0;
+  color: #3f3e4c;;
+}
+
+.lista-artistas-similares{
+  background-color: #696978;
+}
+
+.lista-artistas-similares::-webkit-scrollbar {
+  height: 10px;
+}
+
+.lista-artistas-similares::-webkit-scrollbar-track {
+  background: #a29cad;
+  border-radius: 10px;
+}
+
+.lista-artistas-similares::-webkit-scrollbar-thumb {
+  background-color: #ebd7ea;
+  border-radius: 10px;
+  border: 1px solid #cdb8ce;
 }
