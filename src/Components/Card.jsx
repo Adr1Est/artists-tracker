@@ -3,6 +3,7 @@ import "./Card.css"
 import { useNavigate } from "react-router";
 
 const Card = ({renderVariable,name,image,summary ,listeners, audioSrc}) =>{
+    const navigate = useNavigate()
     const handleClick = () => {
         navigate(`/artist/${name}`);
     };

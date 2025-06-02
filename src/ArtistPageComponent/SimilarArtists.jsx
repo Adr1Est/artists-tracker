@@ -1,7 +1,7 @@
 import './SimilarArtists.css'
 
-function SimilarArtists({artistsdata, singleArtist}){
-  const similarArtistsList = [...artistsdata.filter((artist) => artist["name"] !== `${singleArtist}`)]
+function SimilarArtists({artistsdata}){
+  const similarArtistsList = [...artistsdata.slice(1)]
 
   return(
     <div className='mt-3 similarArtistsComponent'>
