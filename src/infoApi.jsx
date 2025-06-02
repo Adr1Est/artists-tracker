@@ -26,7 +26,7 @@ export const getTopArtistsByGenre = (tag) => {
 };
 
 export const fetchDeezerArtist = (name) => {
-  const url = `https://corsproxy.io/?https://api.deezer.com/search/artist?q='${encodeURIComponent(name)}`;
+  const url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/artist?q='${encodeURIComponent(name)}`;
 
   return fetch(url)
     .then((res) => res.json())

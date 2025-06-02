@@ -10,7 +10,7 @@ function TrackList ({artistsdata}) {
 
   useEffect(()=>{
     const getTrackList = async () => {
-      const response = await fetch(`https://corsproxy.io/?${artist["tracklist"]}`, {
+      const response = await fetch(`https://cors-anywhere.herokuapp.com/${artist["tracklist"]}`, {
         method:'GET'
       })
       const data = await response.json()

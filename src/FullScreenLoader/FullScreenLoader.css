@@ -1,0 +1,10 @@
+.loaderBtn{
+  width: 30px;
+  border: 0;
+  background-color: #21222a;
+  color: #ebd7ea;
+  &&:hover{
+    background-color: #696978;
+    color: #21222a;
+  }
+}
