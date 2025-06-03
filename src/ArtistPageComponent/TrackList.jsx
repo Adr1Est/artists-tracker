@@ -10,7 +10,7 @@ function TrackList ({artistsdata}) {
 
   useEffect(()=>{
     const getTrackList = async () => {
-      const response = await fetch(`https://cors-anywhere.herokuapp.com/${artist["tracklist"]}`, {
+      const response = await fetch(`http://localhost:3000/api/deezer/tracklist/${artist["id"]}`, {
         method:'GET'
       })
       const data = await response.json()
