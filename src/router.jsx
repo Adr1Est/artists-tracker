@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router'
 import App from './App.jsx'
-import ArtistPage from './ArtistPageComponent/ArtistPage'
+import ArtistPage from './Components/ArtistPageComponent/ArtistPage.jsx'
 import ListsRenderComponent from './Components/ListsRenderComponent.jsx'
 
 const router = createBrowserRouter([

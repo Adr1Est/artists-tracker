@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import SimilarArtists from './SimilarArtists'
 import FullScreenLoader from '../FullScreenLoader/FullScreenLoader.jsx'
 import TrackList from './TrackList.jsx'
-import { fetchDeezerArtist } from '../infoApi.jsx'
+import { fetchDeezerArtist } from '../../infoApi.jsx'
 import ArtistHeader from './ArtistHeader.jsx'
 import { useParams } from 'react-router'
 
@@ -25,7 +25,7 @@ function ArtistPage(){
 
   return(
     <>
-    <div className='w-100 d-flex justify-content-center'>
+    <div className='w-100 d-flex justify-content-center mt-2 mb-2'>
       <div className='d-flex flex-column justify-content-center w-50 bg-widget rounded-3 p-3 artist-page-main'>
         <ArtistHeader artistsdata={artistsData} singleArtist={name}/>
         <TrackList artistsdata={artistsData}/> 
