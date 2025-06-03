@@ -3,7 +3,6 @@ import './Header.css'
 import FollowedWidget from './FollowedWidget'
 
 function Header(){
-
   return(
     <div className='d-flex justify-content-center'>
       <div className='d-flex align-items-center justify-content-between rounded-3 p-3 mt-1 header-container'>
