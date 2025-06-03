@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import SimilarArtists from './SimilarArtists'
 import FullScreenLoader from '../FullScreenLoader/FullScreenLoader.jsx'
 import TrackList from './TrackList.jsx'
-import { fetchDeezerArtist } from '../infoApi.jsx'
+import { fetchDeezerArtist } from '../../infoApi.jsx'
 import ArtistHeader from './ArtistHeader.jsx'
 import { useParams } from 'react-router'
 
