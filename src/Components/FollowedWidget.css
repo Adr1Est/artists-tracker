@@ -1,0 +1,30 @@
+.followed-widget{
+  background-color: #696978;
+  position: relative;
+  z-index: 1;
+}
+
+.btnDropdown{
+  background-color: #a29cad;
+}
+
+.dropdownContainer{
+  background-color: #ebd7ea;
+}
+
+.circle-info{
+  position: absolute;
+  background-color: rgb(231, 92, 92);
+  color: rgb(100, 5, 5);
+  width: 30px;
+  height: 30px;
+  aspect-ratio: 1/1;
+  z-index: 2;
+  top: -15px;
+  left: 35px;
+
+  && p{
+    margin: 0;
+    font-weight: 500;
+  }
+}
