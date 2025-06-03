@@ -1,21 +1,17 @@
 import './App.css'
 import CardList from './Components/CardList'
 import ArtistPage from './ArtistPageComponent/ArtistPage.jsx'
-import { strategyTopArtist, strategyGenreTopArtist } from './strategies.jsx'
+import { Outlet } from 'react-router'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faHouse } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faHouse, )
 
 function App() {
 
   return (
     <>
-      {<CardList title="Top Artist" strategy={strategyTopArtist}/> }
-      {<CardList title="Top Rock" tag="rock" strategy={strategyGenreTopArtist}/> }
-      {<CardList title="Top Country" tag="country" strategy={strategyGenreTopArtist}/> }
-      {<CardList title="Top Pop" tag="pop" strategy={strategyGenreTopArtist}/> }
-      {<CardList title="Top Indie" tag="indie" strategy={strategyGenreTopArtist}/> }
-      {<CardList title="Top Rap" tag="rap" strategy={strategyGenreTopArtist}/> }
-      {/*<div className='d-flex justify-content-center align-items-center container-fluid'>
-        <ArtistPage /> 
-      </div>*/}
+      <Outlet />
     </>
   )
 }
