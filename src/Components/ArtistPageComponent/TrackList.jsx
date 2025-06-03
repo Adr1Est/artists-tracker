@@ -8,7 +8,7 @@ function TrackList ({artistsdata}) {
   const [trackList, setTrackList] = useState([])
 
 
-  useEffect(()=>{
+  /*useEffect(()=>{
     const getTrackList = async () => {
       const response = await fetch(`http://localhost:3000/api/deezer/tracklist/${artist["id"]}`, {
         method:'GET'
@@ -18,7 +18,7 @@ function TrackList ({artistsdata}) {
     }
 
     getTrackList()
-  }, [])
+  }, [])*/
 
   return(
     <div className='d-flex flex-column mt-3 mb-1 trackListComponent'>
