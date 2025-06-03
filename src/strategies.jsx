@@ -62,8 +62,6 @@ export const strategyGenreTopArtist = ({title, tag}) =>{
     fetchData();
   }, []);
 
-  console.log(title);
-
   return (
     <>
     <div className="m-5 bg-widget p-3 rounded-3">

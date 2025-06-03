@@ -1,7 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './FollowedWidget.css'
+import useGlobalReducer from "../hooks/useGlobalReducer";
 
 function FollowedWidget(){
+  const { store } = useGlobalReducer()
 
   return(
     <div className='rounded-3 me-3 followed-widget'>
