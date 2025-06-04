@@ -1,18 +1,27 @@
 import { useEffect, useState } from "react";
 import { getTopArtistData, getTopTagData } from "./Components/Data";
 import Card from "./Components/Card";
+import useGlobalReducer from "./hooks/useGlobalReducer";
 
-export const strategyWithDateAndFollow = ({ listeners}) => (
-  <>
-    <p className="white-text my-2">
-      <i className="fa-solid fa-ear-listen"></i> <span></span>
-      {listeners}
-    </p>
-    <button className="follow-button rounded-4">
-      Follow <i className="fa-solid fa-heart"></i>
-    </button>
-  </>
-);
+export const strategyWithDateAndFollow = ({ listeners, name, id }) => {
+  const { store, dispatch } = useGlobalReducer()
+  const addFollowedArtist = (artistName) => {
+    console.log({id, "name": artistName})
+    dispatch( { type: "ADD_FAVOURITE", payload: { id, "name": artistName } } )
+  }
+
+  return (
+    <>
+      <p className="white-text my-2">
+        <i className="fa-solid fa-ear-listen"></i> <span></span>
+        {listeners}
+      </p>
+      <button className="follow-button rounded-4" onClick={() => addFollowedArtist(name)}>
+        Follow <i className="fa-solid fa-heart"></i>
+      </button>
+    </>
+  );
+}
 
 export const strategyWithAudio = ({ audioSrc }) => (
   <audio controls>
@@ -39,6 +48,7 @@ export const strategyTopArtist = ({title}) =>{
         {artists.map((artist) => (
           <Card
             key={artist.name}
+            id={artist.mbid}
             name={artist.name}
             image={artist.deezerImage}
             renderVariable={strategyWithDateAndFollow}
@@ -70,6 +80,7 @@ export const strategyGenreTopArtist = ({title, tag}) =>{
         {artists.map((artist) => (
           <Card
             key={artist.name}
+            id={artist.mbid}
             name={artist.name}
             image={artist.deezerImage}
             renderVariable={strategyWithDateAndFollow}

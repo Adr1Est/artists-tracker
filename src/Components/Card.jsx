@@ -2,7 +2,7 @@ import { strategyWithAudio, strategyWithDateAndFollow } from "../strategies";
 import "./Card.css"
 import { useNavigate } from "react-router";
 
-const Card = ({renderVariable,name,image,summary ,listeners, audioSrc}) =>{
+const Card = ({renderVariable,name,image,summary ,listeners, audioSrc, id}) =>{
     const navigate = useNavigate()
     const handleClick = () => {
         navigate(`/artist/${name}`);
@@ -16,7 +16,7 @@ const Card = ({renderVariable,name,image,summary ,listeners, audioSrc}) =>{
                 <p className="card-text">{summary}</p>
             </div>
             <div className="card-footer d-flex justify-content-between align-items-center">
-                {renderVariable({listeners, audioSrc})}
+                {renderVariable({listeners, audioSrc, name, id})}
             </div>
         </div>
     </>)
